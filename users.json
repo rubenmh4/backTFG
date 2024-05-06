@@ -1,0 +1,67 @@
+[
+    {
+      "id":"f8846612-4407-44e3-8329-bf46457ac54a",
+      "username": "teetee10",
+      "email": "tete10@gmail.com",
+      "password": "tete",
+      "name": "Jose",
+      "firstName": "Recio Garcia",
+      "position": "Derecha",
+      "league": "quinta",
+      "isChat": false
+    },
+    {
+      "id":"f8846612-4407-44e3-8329-bf46457ac54b",
+      "username": "davidSanchez",
+      "email": "davisSanchez@example.com",
+      "password": "davidSanchez",
+      "name": "David",
+      "firstName": "Sanchez Buzon",
+      "position": "Derecha",
+      "league": "quinta",
+      "isChat": false
+    },
+    {"id":"f8846612-4407-44e3-8329-bf46457ac54c",
+      "username": "vega03",
+      "email": "vega03@example.com",
+      "password": "vega",
+      "name": "Manuel",
+      "firstName": "Vega Cabrera",
+      "position": "Reves",
+      "league": "Cuarta",
+      "isChat": true
+    },
+    {
+      "id":"f8846612-4407-44e3-8329-bf46457ac54d",
+      "username": "Yeraybellido16",
+      "email": "yeraybellido@example.com",
+      "password": "yeray",
+      "name": "Yeray",
+      "firstName": "Bellido Brando",
+      "position": "Reves",
+      "league": "Cuarta",
+      "isChat": false
+    },
+    {
+      "id":"f8846612-4407-44e3-8329-bf46457ac54e",
+      "username": "DavidEche16",
+      "email": "davidElle@example.com",
+      "password": "david",
+      "name": "David",
+      "firstName": "Echevarria Ramirez",
+      "position": "--",
+      "league": "--",
+      "isChat": true
+    },
+    {
+      "id":"f8846612-4407-44e3-8329-bf46457ac54f",
+      "username": "Andyferga",
+      "email": "adnyferga@example.com",
+      "password": "andy",
+      "name": "Andres",
+      "firstName": "Fernandez Garcia",
+      "position": "Put---",
+      "league": "Todas",
+      "isChat": false
+    }
+  ]

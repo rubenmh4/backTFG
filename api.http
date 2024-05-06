@@ -1,0 +1,29 @@
+
+GET http://localhost:3001/users
+
+
+###Insertar usuario
+
+POST http://localhost:3001/users
+Content-Type: application/json
+
+{
+"username": "ruben",
+"email": "ruben@example.com",
+"password": "yes",
+"name": "ruben",
+"firstName": "PrimerNombre2",
+"position": "Posición2",
+"league": "Liga2",
+"isChat": false
+    
+}
+
+### get by id
+GET http://localhost:3001/users/16607687-f0ab-4848-a24e-92c0207740cd
+
+### DELETE BY ID
+
+DELETE  http://localhost:3001/users/48a02926-e350-4138-874e-94078c6df3cb
+
+### update user
