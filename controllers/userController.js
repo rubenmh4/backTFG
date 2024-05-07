@@ -19,6 +19,8 @@ export class UserController {
         const newUser = await UserModel.create({input:results.data})
         return res.status(201).json(newUser)
     }
+ 
+
     static getById= async (req,res) => {
         const {id} = req.params
         const user = await UserModel.getById({id})

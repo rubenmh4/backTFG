@@ -18,12 +18,51 @@ Content-Type: application/json
 "isChat": false
     
 }
-
 ### get by id
-GET http://localhost:3001/users/16607687-f0ab-4848-a24e-92c0207740cd
+GET http://localhost:3001/1b48d05a-05e2-4f5c-b72b-e0d1be1cebf9
 
 ### DELETE BY ID
 
 DELETE  http://localhost:3001/users/48a02926-e350-4138-874e-94078c6df3cb
 
 ### update user
+PATCH http://localhost:3001/users/f8846612-4407-44e3-8329-bf46457ac54a
+Content-Type: application/json
+
+{
+    "email":"sdf@gmail.com",
+    "username":"rubenelmejor",
+    "name":"bichosexual"
+}
+
+
+
+
+### create user
+
+POST http://localhost:3001/users/mongo
+Content-Type: application/json
+
+{
+"username": "33",
+"email": "333@example.com",
+"password": "yes",
+"name": "ruben",
+"firstName": "PrimerNombre2",
+"isChat":true
+    
+}
+
+### recoger todos users
+
+GET http://localhost:3001/users/mongo/get
+
+### user by id
+
+GET http://localhost:3001/users/mongo/6639f8c6ca1813d6aee109f2
+
+### users by ischat= true
+GET http://localhost:3001/users/mongo/chat
+
+### delete by id
+DELETE http://localhost:3001/users/mongo/6639f8c6ca1813d6aee109f2
