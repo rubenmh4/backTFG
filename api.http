@@ -35,6 +35,9 @@ Content-Type: application/json
     "name":"bichosexual"
 }
 
+#####
+##          USERS
+#####
 
 
 
@@ -44,8 +47,8 @@ POST http://localhost:3001/users/mongo
 Content-Type: application/json
 
 {
-"username": "33",
-"email": "333@example.com",
+"username": "ssdfd",
+"email": "eeee@example.com",
 "password": "yes",
 "name": "ruben",
 "firstName": "PrimerNombre2",
@@ -65,4 +68,26 @@ GET http://localhost:3001/users/mongo/6639f8c6ca1813d6aee109f2
 GET http://localhost:3001/users/mongo/chat
 
 ### delete by id
-DELETE http://localhost:3001/users/mongo/6639f8c6ca1813d6aee109f2
+DELETE http://localhost:3001/users/mongo/663a98fb0c738078b25f4cfb
+
+#####
+##          BOOKING
+#####
+
+
+POST http://localhost:3001/booking
+Content-Type: application/json
+
+{
+    "pista":1,
+    "hora":2230,
+    "diaReserva":"2024-03-12",
+    "idUsuario":"6639f7aef296fef7476837f3"
+}
+
+### DELETE BOOKING BY ID
+
+DELETE http://localhost:3001/booking/
+
+#### get booking by idUser
+GET http://localhost:3001/booking/

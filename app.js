@@ -6,6 +6,7 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 //variable de entorno customizadas
 import { config } from 'dotenv'
+import { bookingRouter } from './Router/bookingRouter.js'
 
 config()
 //conection mongodb
@@ -30,6 +31,8 @@ app.get('/', (req,res)=> {
 })
 
 app.use('/users',userRouter)
+app.use('/booking',bookingRouter)
+
 const port = process.env.PORT ?? 3001
 
 app.listen(port, ()=> {
