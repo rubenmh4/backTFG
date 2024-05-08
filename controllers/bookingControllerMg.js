@@ -5,8 +5,8 @@ export class BookingController {
     const newBooking = Booking(req.body);
     newBooking
       .save()
-      .then((data) => res.json(data))
-      .catch((err) => res.json(err));
+      .then((data) => (res.json(data)))
+      .catch((err) => (res.json(err)));
   };
 
   static deleteById = async (req, res) => {
@@ -18,13 +18,13 @@ export class BookingController {
           message: "BOOKING NOT FOUND",
           deleted: false,
         });
-      res.json({
+     return res.json({
         deletedBooking,
         message: "BOOKING DELETED",
         deleted: true,
       });
     } catch (err) {
-      res.json(err);
+     return res.json(err);
     }
   };
 
@@ -39,7 +39,7 @@ export class BookingController {
         return res.json(bookings)  
     }
     catch(err){
-        res.json(err)
+      return  res.json(err)
     }
   }
 }

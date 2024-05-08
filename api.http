@@ -47,9 +47,9 @@ POST http://localhost:3001/users/mongo
 Content-Type: application/json
 
 {
-"username": "ssdfd",
-"email": "eeee@example.com",
-"password": "yes",
+"username": "ohsi",
+"email": "ohsi@example.com",
+"password": "casanco",
 "name": "ruben",
 "firstName": "PrimerNombre2",
 "isChat":true
@@ -57,7 +57,7 @@ Content-Type: application/json
 }
 
 ### recoger todos users
-
+ 
 GET http://localhost:3001/users/mongo/get
 
 ### user by id
@@ -69,6 +69,17 @@ GET http://localhost:3001/users/mongo/chat
 
 ### delete by id
 DELETE http://localhost:3001/users/mongo/663a98fb0c738078b25f4cfb
+
+###
+
+PATCH http://localhost:3001/users/mongo/663bbb5c235b5bd1c3f8f393
+
+Content-Type: application/json
+
+{
+    "name": "holita",
+    "firstName": "Moron"
+}
 
 #####
 ##          BOOKING
@@ -90,4 +101,6 @@ Content-Type: application/json
 DELETE http://localhost:3001/booking/
 
 #### get booking by idUser
-GET http://localhost:3001/booking/
+GET http://localhost:3001/booking/6639f7aef296fef7476837f3
+
+###

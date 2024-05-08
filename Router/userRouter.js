@@ -14,6 +14,7 @@ userRouter.patch('/:id',UserController.update)
 
 
 userRouter.post('/mongo',UserControllerMg.create)
+userRouter.patch('/mongo/:id',UserControllerMg.updateUser)
 userRouter.get('/mongo/get',UserControllerMg.getAll)
 userRouter.get('/mongo/chat',UserControllerMg.getUserChat)
 userRouter.get('/mongo/:id',UserControllerMg.getById)

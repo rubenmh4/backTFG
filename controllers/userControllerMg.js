@@ -1,23 +1,26 @@
 import { User } from "../schemas/mongodb/userMongo.js";
+import bcryptjs from 'bcryptjs'
 
 export class UserControllerMg {
-  static create = async (req, res) => {
-    const newUser = User(req.body);
-    const compareUser = await User.findOne({ username: newUser.username });
-    console.log(compareUser);
-    console.log("!------");
-    console.log(newUser);
 
+  static create = async (req, res) => {
+    const compareUser = await User.findOne({ username: req.body.username });
+    
+    
     if (compareUser === null) {
+      const salt = await bcryptjs.genSalt(3)
+      const hashPassword = await bcryptjs.hash(req.body.password,salt)
+
+      const newUser = User({...req.body,password:hashPassword});
       newUser
         .save()
-        .then((data) => res.json({
+        .then((data) => (res.json({
              user: data,
             create: true
-         }))
-        .catch((error) => res.json(error));
+         })))
+        .catch((error) =>  (res.json(error)));
     } else {
-      res.json({
+      return res.json({
         message: "USER ALREADY EXIST",
         create: false,
       });
@@ -27,9 +30,9 @@ export class UserControllerMg {
   static getAll = async (req, res) => {
     try {
       const users = await User.find();
-      res.json(users);
+      return res.json(users);
     } catch (err) {
-      res.json(err);
+      return res.json(err);
     }
   };
 
@@ -39,9 +42,9 @@ export class UserControllerMg {
       const user = await User.findById(id);
       if (user === null)
         return res.status(404).json({ message: "NOT FOUND THE USER" });
-      res.json(user);
+      return res.json(user);
     } catch (err) {
-      res.json(err);
+     return res.json(err);
     }
   };
 
@@ -55,13 +58,13 @@ export class UserControllerMg {
             message: "USE NOT FOUND",
             deleted:false
          });
-      res.json({
+       return res.json({
         userDeleted,
         message: "USER DELETED",
         deleted:true
       });
     } catch (err) {
-      res.json(err);
+    return  res.json(err);
     }
   };
 
@@ -70,9 +73,20 @@ export class UserControllerMg {
       const usersChat = await User.find({ isChat: true });
       if (usersChat === null)
         return res.status(404).json({ message: "NOT HAVE USERS" });
-      res.json(usersChat);
+    return  res.json(usersChat);
     } catch (err) {
-      res.json(err);
+    return  res.json(err);
     }
   };
+
+  static updateUser = async (req,res) => {
+    try {
+      const {id} = req.params
+      //const updatedUser = await User.updateOne({_id:id},{re})
+      console.log(req.body)
+     return res.json(req.body.name)
+    }catch(err){
+      return res.json(err)
+    }
+  }
 }
