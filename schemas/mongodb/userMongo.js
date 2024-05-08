@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import z from 'zod'
 
  const userSchema = mongoose.Schema({    
     username:{
@@ -47,3 +47,18 @@ import mongoose from "mongoose";
 })
 
 export const User = mongoose.model('User',userSchema)
+
+const userSchemaZod = z.object({
+    username:z.string(),
+    email:z.string(),
+    password:z.string(),
+    name:z.string(),
+    firstName:z.string(),
+    position:z.string(),
+    league:z.string(),
+    isChat:z.boolean(),
+    imgUrl:z.string()
+})
+export const validatePartialUser = (input)=> {
+    return userSchemaZod.partial().safeParse(input)
+}
