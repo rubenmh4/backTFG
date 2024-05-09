@@ -2,6 +2,7 @@ import express, { json } from 'express'
 import logger from 'morgan'
 import { userRouter } from './Router/userRouter.js'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 //driver de mongo
 import mongoose from 'mongoose'
 //variable de entorno customizadas
@@ -13,7 +14,7 @@ config()
 const url  = process.env.MONGO
 
 
-mongoose.connect(url,{})
+mongoose.connect('mongodb+srv://rubenmh4:ruben2004@proyectodaw.cjqsoxa.mongodb.net/test',{})
 .then(()=> {console.log('Connected to MongoDb Atlas')})
 .catch(err => {console.log(err)})
 
@@ -22,6 +23,7 @@ const app = express()
 
 app.use(cors())
 app.use(json())
+app.use(cookieParser())
 app.use(logger('dev'))
 app.disable('x-powered-by')
 
