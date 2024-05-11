@@ -29,7 +29,7 @@ import z from 'zod'
         required:false,
         default:'--'
     },
-    league:{
+    level:{
         type:String,
         required:false,
         default:'--'
@@ -42,7 +42,7 @@ import z from 'zod'
     imgUrl:{
         type:String,
         required:false,
-        default:'https://unavatar.io/'
+        default:'https://unavatar.io/#/'
     }
 })
 

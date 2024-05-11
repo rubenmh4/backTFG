@@ -123,12 +123,13 @@ export class UserControllerMg {
       {expiresIn:process.env.JWT_EXPIRE})
 
       const cookieOptions = {
-        expires:new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 24),
+        expires:new Date(Date.now() + process.env.JWT_COOKIE_EXPIRE * 30000),
         path:"/"
       }
     
       res.cookie("jwt",token,cookieOptions)
-      return res.json({message:'Usuario logueado'})
+      console.group("jwt",token,cookieOptions)
+      return res.json({message:'Usuario logueado', jwt:token})
 
   }
 }

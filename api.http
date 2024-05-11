@@ -43,15 +43,15 @@ Content-Type: application/json
 
 ### create user // registre
 
-POST http://localhost:3001/users/mongo
+POST http://localhost:3001/users/register
 Content-Type: application/json
 
 {
-"username": "ohsi",
-"email": "ohsi@example.com",
+"username": "casanco2000",
+"email": "casanco2000@example.com",
 "password": "casanco",
-"name": "ruben",
-"firstName": "PrimerNombre2",
+"name": "carlos",
+"firstName": "Santiago",
 "isChat":true
 }
 
