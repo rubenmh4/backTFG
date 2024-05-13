@@ -31,6 +31,19 @@ export class UserControllerMg {
     }
   };
 
+  static getByUsername = async (req,res)=> {
+    try {
+      const {username} = req.params
+      const user = await User.findOne({username:username})
+
+      if(!user)return res.json({message:'user not found'})
+      return res.json(user)
+    } catch (error) {
+
+      res.json({message:'yes'})
+    }
+  };
+
   static getAll = async (req, res) => {
     try {
       const users = await User.find();
@@ -128,8 +141,7 @@ export class UserControllerMg {
       }
     
       res.cookie("jwt",token,cookieOptions)
-      console.group("jwt",token,cookieOptions)
-      return res.json({message:'Usuario logueado', jwt:token})
+      return res.json({message:'Usuario logueado', jwt:token,user:usuarioACompare})
 
   }
 }
