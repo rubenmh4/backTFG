@@ -2,6 +2,10 @@ import { Booking } from "../schemas/mongodb/bookingMongo.js";
 
 export class BookingController {
   static create = async (req, res) => {
+    const {hora,diaReserva,pista} = req.body
+    
+    const checkBokking =await  Booking.findOne({hora:hora,diaReserva:diaReserva,pista:pista})
+    if(checkBokking !== null) return res.json({message:'RESERVA NO DISPONIBLE'})
     const newBooking = Booking(req.body);
     newBooking
       .save()

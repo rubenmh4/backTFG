@@ -6,7 +6,7 @@ export const userRouter = Router()
 userRouter.post('/register',UserControllerMg.create)
 userRouter.post('/login',UserControllerMg.login)
 
-userRouter.get('/:username',UserControllerMg.getByUsername)
+userRouter.get('/username/:username',UserControllerMg.getByUsername)
 userRouter.get('/chat',UserControllerMg.getUserChat)
 userRouter.get('/',UserControllerMg.getAll)
 userRouter.get('/:id',UserControllerMg.getById)

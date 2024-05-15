@@ -2,12 +2,8 @@
 GET http://localhost:3001/users
 
 ###
-GET http://localhost:3001/users/username
-Content-Type: application/json
+GET http://localhost:3001/users/username/casanco2000
 
-{
-    "username":"casanco2000"
-}
 ###Insertar usuario
 
 POST http://localhost:3001/users
