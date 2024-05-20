@@ -2,6 +2,17 @@
 GET http://localhost:3001/users
 
 ###
+
+POST http://localhost:3001/chat
+Content-Type: application/json
+
+{
+"message":"hola",
+"sendBy":"yo",
+"time":"s"
+}
+
+###
 GET http://localhost:3001/users/username/casanco2000
 
 ###Insertar usuario
