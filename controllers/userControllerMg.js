@@ -47,7 +47,8 @@ export class UserControllerMg {
   static getAll = async (req, res) => {
     try {
       const users = await User.find();
-      return res.json(users);
+      const allUser = users.filter(user => user.username !== 'admin')
+      return res.json(allUser);
     } catch (err) {
       return res.json(err);
     }
