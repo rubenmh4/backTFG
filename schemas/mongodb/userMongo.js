@@ -27,22 +27,15 @@ import z from 'zod'
     position: {
         type:String,
         required:false,
-        default:'--'
     },
     level:{
         type:String,
         required:false,
-        default:'--'
-    },
-    isChat:{
-        type:Boolean,
-        required:false,
-        default:false
     },
     imgUrl:{
         type:String,
         required:false,
-        default:'https://unavatar.io/#/'
+        default:'https://firebasestorage.googleapis.com/v0/b/imagenes-react-9d27e.appspot.com/o/admin?alt=media&token=162b00ed-4690-4d2f-8a5e-86830fee3d0c'
     }
 })
 
@@ -56,7 +49,6 @@ const userSchemaZod = z.object({
     firstName:z.string(),
     position:z.string(),
     league:z.string(),
-    isChat:z.boolean(),
     imgUrl:z.string()
 })
 export const validatePartialUser = (input)=> {
