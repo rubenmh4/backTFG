@@ -5,7 +5,7 @@ const messageSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  sendBy: {
+  user: {
     type: String,
     require: true,
   },
