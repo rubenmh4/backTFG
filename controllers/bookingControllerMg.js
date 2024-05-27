@@ -46,4 +46,15 @@ export class BookingController {
       return  res.json(err)
     }
   }
+
+  static getBookingByDate = async (req,res) =>{
+    try{
+      const {date } = req.params
+      const bookings = await Booking.find({diaReserva:date})
+      if(bookings === null) return res.json({message:'NOT FOUND BOOKING BY THIS DATE'})
+      return res.json(bookings)
+    } catch(err)      {
+      return res.json(err)
+    }
+  }
 }

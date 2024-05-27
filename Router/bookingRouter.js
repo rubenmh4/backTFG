@@ -8,3 +8,4 @@ bookingRouter.post('/', BookingController.create)
 bookingRouter.delete('/:id',BookingController.deleteById)
 
 bookingRouter.get('/:id',BookingController.getBookingByUser)
+bookingRouter.get('/date/:date',BookingController.getBookingByDate)

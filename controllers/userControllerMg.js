@@ -101,12 +101,7 @@ export class UserControllerMg {
     try {
       const { id } = req.params;
       const results = validatePartialUser(req.body);
-      if(results.data.password) {
-        const salt = await bcryptjs.genSalt(3);
-      const hashPassword = await bcryptjs.hash(results.data.password, salt);
       
-      results.data.password = hashPassword
-      }
       if(!results.success) return res.status(400).json({message:JSON.parse(results.error.message)})
       const updatedUser = await User.updateOne(
         { _id: id },

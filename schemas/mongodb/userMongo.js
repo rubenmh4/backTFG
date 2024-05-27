@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import z from 'zod'
+import z, { number } from 'zod'
 
  const userSchema = mongoose.Schema({    
     username:{
@@ -29,7 +29,7 @@ import z from 'zod'
         required:false,
     },
     level:{
-        type:String,
+        type:Number,
         required:false,
     },
     imgUrl:{
