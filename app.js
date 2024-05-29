@@ -18,7 +18,7 @@ config()
 //conection mongodb
 const url  = process.env.MONGO
 
-mongoose.connect('mongodb+srv://rubenmh4:ruben2004@proyectodaw.cjqsoxa.mongodb.net/test',{})
+mongoose.connect(url,{})
 .then(()=> {console.log('Connected to MongoDb Atlas')})
 .catch(err => {console.log(err)})
 
